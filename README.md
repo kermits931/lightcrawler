@@ -1,21 +1,13 @@
 # lightcrawler
-
-Crawl a website and run it through [Google Lighthouse](https://github.com/GoogleChrome/lighthouse).
-
-## Installing
+Crawl a website and run it through Google lighthouse
 
 ```bash
 npm install --save-dev lightcrawler
-```
 
-## Running
-
-```bash
 lightcrawler --url https://atom.io/ --config lightcrawler-config.json
 ```
 
 where `lightcrawler-config.json` looks something like this:
-
 ```json
 {
   "extends": "lighthouse:default",
@@ -45,19 +37,5 @@ where `lightcrawler-config.json` looks something like this:
   }
 }
 ```
-
-### Running on CI
-
-You can set this up on Travis with the following `.travis.yml` config:
-
-```yml
-dist: trusty
-
-addons:
-  chrome: beta
-```
-
-See https://docs.travis-ci.com/user/gui-and-headless-browsers/#Using-the-Chrome-addon-in-the-headless-mode
-for more details.
 
 Enjoy!

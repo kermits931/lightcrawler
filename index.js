@@ -4,8 +4,7 @@ const Crawler = require('simplecrawler')
 const path = require('path')
 const queue = require('async/queue')
 const fs = require('fs')
-
-require('colors')
+const colors = require('colors')
 
 const stats = {
   pageCount: 0,
@@ -35,11 +34,11 @@ module.exports = (options) => {
     return links
   }
 
-  let lighthouseFailed = false
+  let totalErrorCount = 0
 
   const lighthouseQueue = queue((url, callback) => {
-    runLighthouse(url, configPath, (error) => {
-      if (error != null) lighthouseFailed = true
+    runLighthouse(url, configPath, (errorCount) => {
+      totalErrorCount += errorCount
       callback()
     })
   }, config.settings.crawler.maxChromeInstances)
@@ -50,7 +49,7 @@ module.exports = (options) => {
   crawler.once('complete', () => {
     lighthouseQueue.drain = () => {
       printStats()
-      if (lighthouseFailed) {
+      if (totalErrorCount > 0) {
         process.exit(1)
       }
     }
@@ -90,7 +89,7 @@ function runLighthouse (url, configPath, callback) {
       report = JSON.parse(output)
     } catch (parseError) {
       console.error(`Parsing JSON report output failed: ${output}`)
-      callback(parseError)
+      callback(1)
       return
     }
 
@@ -101,8 +100,8 @@ function runLighthouse (url, configPath, callback) {
           stats.passedAuditsCount++
         } else {
           if (!displayedCategory) {
-            console.log()
-            console.log(category.name.bold.underline)
+            console.log();
+            console.log(category.name.bold.underline);
             displayedCategory = true
           }
           errorCount++
@@ -147,32 +146,28 @@ function runLighthouse (url, configPath, callback) {
       })
     })
 
-    if (errorCount > 0) {
-      callback(new Error(`Lighthouse violations: ${errorCount}`))
-    } else {
-      callback()
-    }
+    callback(errorCount)
   })
 }
 
-function printStats () {
-  console.log()
-  console.log()
-  console.log('Lighthouse Summary'.bold.underline)
-  console.log(`  Total Pages Scanned: ${stats.pageCount}`)
-  console.log(`  Total Auditing Time: ${new Date() - stats.startTime} ms`)
+function printStats() {
+  console.log();
+  console.log();
+  console.log('Lighthouse Summary'.bold.underline);
+  console.log(`  Total Pages Scanned: ${stats.pageCount}`);
+  console.log(`  Total Auditing Time: ${new Date() - stats.startTime} ms`);
   const totalTime = Object.keys(stats.auditTimesByPageUrl).reduce((sum, url) => {
     const {endTime, startTime} = stats.auditTimesByPageUrl[url]
     return (endTime - startTime) + sum
   }, 0)
-  console.log(`  Average Page Audit Time: ${Math.round(totalTime / stats.pageCount)} ms`)
-  console.log(`  Total Audits Passed: ${stats.passedAuditsCount}`, '\u2713'.green)
+  console.log(`  Average Page Audit Time: ${Math.round(totalTime/stats.pageCount)} ms`);
+  console.log(`  Total Audits Passed: ${stats.passedAuditsCount}`, '\u2713'.green);
   if (Object.keys(stats.violationCounts).length === 0) {
-    console.log(`  Total Violations: None! \\o/ 🎉`)
+    console.log(`  Total Violations: None! \\o/ 🎉`);
   } else {
-    console.log(`  Total Violations:`)
+    console.log(`  Total Violations:`);
     Object.keys(stats.violationCounts).forEach(category => {
-      console.log(`    ${category}: ${stats.violationCounts[category]}`, '\u2717'.red)
+      console.log(`    ${category}: ${stats.violationCounts[category]}`, '\u2717'.red);
     })
   }
 }
