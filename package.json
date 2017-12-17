@@ -1,34 +1,1494 @@
 {
-  "name": "lightcrawler",
-  "version": "0.0.9",
-  "description": "Crawl sites and run pages through Google Lighthouse",
-  "repository": "https://github.com/github/lighthouse",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha test && standard --env mocha"
-  },
-  "bin": {
-    "lightcrawler": "./cli.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "async": "^2.4.1",
-    "cheerio": "^1.0.0-rc.1",
-    "colors": "^1.1.2",
-    "lighthouse": "^2.1.0",
-    "simplecrawler": "^1.1.3",
-    "yargs": "^8.0.2"
-  },
-  "devDependencies": {
-    "express": "^4.15.3",
-    "get-port": "^3.1.0",
-    "mocha": "^3.4.2",
-    "standard": "^10.0.2"
-  },
-  "files": [
-    "cli.js",
-    "index.js"
-  ]
+    "name": "",
+    "version": "",
+    "repository": "",
+    "devDependencies": {
+        "bluebird": "",
+        "eslint-plugin-google-camelcase": "",
+        "google-closure-compiler": "",
+        "grunt": "",
+        "grunt-bump": "",
+        "grunt-cli": "",
+        "grunt-contrib-clean": "",
+        "grunt-contrib-coffee": "",
+        "grunt-contrib-copy": "",
+        "grunt-contrib-qunit": "",
+        "grunt-eslint": "",
+        "grunt-prompt": "",
+        "load-grunt-tasks": "",
+        "superagent": "",
+        "express": "",
+        "get-port": "",
+        "mocha": "",
+        "standard": ""
+    },
+    "scripts": {
+        "test": ""
+    },
+    "description": "",
+    "bugs": {
+        "url": ""
+    },
+    "homepage": "",
+    "main": "",
+    "directories": {
+        "test": ""
+    },
+    "keywords": "",
+    "author": "",
+    "license": "",
+    "//": "=/UserScript==",
+    "// @name GoEar HotLink 2015": "",
+    "// @author laurenceHR": "",
+    "// @include *goear.com/listen/*": "",
+    "// @include *goear.com/listen/*/*": "",
+    "// @version 1.5": "",
+    "// @description Goear HotLink for download": "",
+    "// Script by laurenceHR - www.daxes.net": "",
+    "////// Get Song ID": "",
+    "var url": "document.URL;",
+    "var urls": "url.split('/');",
+    "var id": "urls[4];",
+    "/////// Get HotLink": "",
+    "var hotlink": "\"http://www.goear.com/action/sound/get/\" + id;",
+    "////// Add HotLink": "",
+    "addHotLink(hotlink);": "",
+    "//////": "",
+    "/******  Function For Add Link *****/": "",
+    "function addHotLink(link){": "",
+    "//var style": "document.createElement('style');",
+    "//var css": "\"#main.listen .actions .down {background-position-y: 8px;}\" + \"\n\";",
+    "//    style.textContent": "css;",
+    "//var head": "document.getElementsByTagName('head')[0];",
+    "//    head.appendChild(style);": "",
+    "var a": "document.createElement('a');",
+    "a.href": "link;",
+    "a.target": "\"_blank\";",
+    "a.innerHTML": "'<span class=\"glyphicons download\"></span>';",
+    "a.title": "'Get HotLink';",
+    "a.className": "'';",
+    "a.id": "'hotlink';",
+    "var li": "document.createElement('li');",
+    "li.className": "'action_item';",
+    "li.appendChild(a);": "",
+    "var ul_actions": "document.getElementsByClassName('actions')[0];",
+    "ul_actions.appendChild(li);": "",
+    "}": "",
+    "var express": "require('express');",
+    "var path": "",
+    "var favicon": "",
+    "var logger": "",
+    "var cookieParser": "",
+    "var bodyParser": "",
+    "var index": "",
+    "var users": "",
+    "var app": "",
+    "// view engine setup": "",
+    "app.set('views', path.join(__dirname, 'views'));": "",
+    "app.set('view engine', 'jade');": "",
+    "// uncomment after placing your favicon in /public": "",
+    "//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));": "",
+    "app.use(logger('dev'));": "",
+    "app.use(bodyParser.json());": "",
+    "app.use(bodyParser.urlencoded({ extended": "",
+    "app.use(cookieParser());": "",
+    "app.use(express.static(path.join(__dirname, 'public')));": "",
+    "app.use('/', index);": "",
+    "app.use('/users', users);": "",
+    "// catch 404 and forward to error handler": "",
+    "app.use(function(req, res, next) {": "",
+    "var err": "",
+    "err.status": "",
+    "next(err);": "",
+    "});": "",
+    "// error handler": "",
+    "app.use(function(err, req, res, next) {": "",
+    "// set locals, only providing error in development": "",
+    "res.locals.message": "",
+    "res.locals.error": "",
+    "// render the error page": "",
+    "res.status(err.status || 500);": "",
+    "res.render('error');": "",
+    "module.exports": "(options) => {",
+    "type": "",
+    "url": "",
+    "bluebird": "",
+    "eslint-plugin-google-camelcase": "",
+    "google-closure-compiler": "",
+    "grunt": "",
+    "grunt-bump": "",
+    "grunt-cli": "",
+    "grunt-contrib-clean": "",
+    "grunt-contrib-coffee": "",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-qunit": "",
+    "grunt-eslint": "",
+    "grunt-prompt": "",
+    "load-grunt-tasks": "",
+    "superagent": "",
+    "test": "",
+    "var router": "",
+    "/* GET home page. */": "",
+    "router.get('/', function(req, res, next) {": "",
+    "res.render('index', { title": "",
+    "bin": {
+        "lightcrawler": ""
+    },
+    "dependencies": {
+        "async": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "cheerio": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "colors": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "lighthouse": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "ansi-regex": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "is-fullwidth-code-point": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "string-width": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "strip-ansi": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "yargs": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "simplecrawler": "",
+        "yargs": "",
+        "@types/node": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "accepts": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "acorn": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "acorn-jsx": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": "",
+            "dependencies": {
+                "acorn": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                }
+            }
+        },
+        "ajv": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "ajv-keywords": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "ansi-align": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "ansi-escapes": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "ansi-regex": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "ansi-styles": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "argparse": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "array-find-index": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "array-flatten": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "array-union": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "array-uniq": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "array.prototype.find": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "arrify": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "axe-core": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "babar": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "colors": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "babel-code-frame": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "balanced-match": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "boolbase": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "boxen": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "camelcase": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "chalk": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "brace-expansion": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "browser-stdout": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "builtin-modules": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "caller-path": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "callsites": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "camelcase": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "camelcase-keys": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "capture-stack-trace": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "chalk": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "ansi-regex": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "ansi-styles": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "strip-ansi": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "supports-color": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "chrome-devtools-frontend": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "circular-json": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "cli-boxes": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "cli-cursor": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "cli-width": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "cliui": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "ansi-regex": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "is-fullwidth-code-point": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "string-width": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                },
+                "strip-ansi": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "co": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "code-point-at": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "color-convert": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "color-name": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "commander": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "concat-map": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "concat-stream": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "configstore": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "contains-path": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "content-disposition": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "content-type": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "cookie": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "cookie-signature": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "core-util-is": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "create-error-class": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "cross-spawn": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "crypto-random-string": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "css-select": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "css-what": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "currently-unhandled": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "d": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "debug": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "debug-log": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "decamelize": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "deep-extend": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "deep-is": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "define-properties": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "deglob": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "del": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "depd": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "destroy": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "devtools-timeline-model": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "chrome-devtools-frontend": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "diff": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "doctrine": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "dom-serializer": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "domelementtype": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "domelementtype": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "domhandler": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "domutils": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "dot-prop": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "duplexer3": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "ee-first": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "encodeurl": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "entities": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "error-ex": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "es-abstract": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "es-to-primitive": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "es5-ext": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "es6-iterator": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "es6-map": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "es6-set": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "es6-symbol": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "es6-weak-map": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "escape-html": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "escape-string-regexp": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "escope": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "eslint": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": "",
+            "dependencies": {
+                "strip-bom": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                }
+            }
+        },
+        "eslint-config-standard": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "eslint-config-standard-jsx": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "eslint-import-resolver-node": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "eslint-module-utils": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "eslint-plugin-import": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": "",
+            "dependencies": {
+                "doctrine": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                }
+            }
+        },
+        "eslint-plugin-node": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "eslint-plugin-promise": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "eslint-plugin-react": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": "",
+            "dependencies": {
+                "doctrine": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                }
+            }
+        },
+        "eslint-plugin-standard": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "espree": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "esprima": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "esquery": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "esrecurse": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "estraverse": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "esutils": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "etag": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "event-emitter": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "execa": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "exit-hook": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "express": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": "",
+            "dependencies": {
+                "debug": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                }
+            }
+        },
+        "fast-levenshtein": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "figures": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "file-entry-cache": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "finalhandler": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": "",
+            "dependencies": {
+                "debug": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                }
+            }
+        },
+        "find-root": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "find-up": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "flat-cache": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "foreach": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "forwarded": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "fresh": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "fs.realpath": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "function-bind": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "generate-function": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "generate-object-property": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "get-caller-file": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "get-port": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "get-stdin": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "get-stream": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "glob": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "globals": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "globby": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "got": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "graceful-fs": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "graceful-readlink": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "growl": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "has": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "has-ansi": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "ansi-regex": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "has-flag": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "hosted-git-info": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "htmlparser2": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "http-errors": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "iconv-lite": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "ignore": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "image-ssim": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "import-lazy": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "imurmurhash": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "indent-string": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "inflight": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "inherits": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "ini": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "inquirer": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": "",
+            "dependencies": {
+                "ansi-regex": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                },
+                "is-fullwidth-code-point": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                },
+                "string-width": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                },
+                "strip-ansi": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": "",
+                    "dev": ""
+                }
+            }
+        },
+        "interpret": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "invert-kv": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "ipaddr.js": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-arrayish": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-builtin-module": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-callable": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-date-object": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-finite": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-fullwidth-code-point": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-my-json-valid": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-npm": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-obj": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-path-cwd": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-path-in-cwd": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-path-inside": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-property": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-redirect": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-regex": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-resolvable": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-retry-allowed": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-stream": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "is-symbol": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "is-utf8": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "isarray": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "isexe": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "jpeg-js": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "js-tokens": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "js-yaml": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "json-stable-stringify": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "json-stringify-safe": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "json3": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "jsonify": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "jsonpointer": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "jsx-ast-utils": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "latest-version": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "lcid": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "levn": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "lighthouse-logger": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "load-json-file": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "locate-path": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dependencies": {
+                "path-exists": {
+                    "version": "",
+                    "resolved": "",
+                    "integrity": ""
+                }
+            }
+        },
+        "lodash": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        },
+        "lodash._baseassign": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "lodash._basecopy": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "lodash._basecreate": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "lodash._getnative": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "lodash._isiterateecall": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "lodash.cond": {
+            "version": "",
+            "resolved": "",
+            "integrity": "",
+            "dev": ""
+        },
+        "lodash.create": {
+            "version": "",
+            "resolved": "",
+            "integrity": ""
+        }
+    },
+    "files": [
+        ""
+    ],
+    "lockfileVersion": ""
 }
